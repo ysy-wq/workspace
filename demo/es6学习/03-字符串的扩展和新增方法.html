@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// for of遍历字符串，该遍历器最大的优点是可以识别大于0xFFFF的码点
+		// for (let s of 'ABCDEFG') {
+		// 	console.log(s)
+		// }
+		
+		// String.fromCodePoint():该字符串方法相对于es5中的String.fromCharCode()
+		// 来说，它可以识别码点大于0xFFFFFF的字符
+		// console.log(String.fromCharCode(0x20BB7)) //ஷ 该方法会将最高位的2给舍去
+		// console.log(String.fromCodePoint(0x20BB7)) //𠮷
+		
+		// codePointAt()测试字符是两个字节还是四个字节
+		// function is32Bit(c) {
+		// 	return c.codePointAt(0) > 0xFFFF
+		// }
+		// console.log(is32Bit('𠮷'))
+		// console.log(is32Bit('a'))
+		
+		// let arr = [...'123qwed']
+		// arr.forEach(i => console.log(i))
+		
+		// includes():判断字符串中是否包含该字符
+		// startsWith():判断是否出现在起始位置
+		// endsWith():判断是否出现在结束位置
+		// 这三个方法都可以传递第二个参数，表示开始搜索的位置，其中endsWith针对前n个字符
+		// let s = 'Hello World!'
+		// console.log(s.includes('l'))// true
+		// console.log(s.startsWith('H'))// true
+		// console.log(s.endsWith('!'))// true
+		
+		// repeat(),该方法中的参数会被先取整，如果是正数，则重复。
+		// 若为负数或Infinity则会报错。若参数为字符串，则会先转换成数字
+		// let s = 'abc'
+		// console.log(s.repeat(3))
+		
+		// padStart(),padEnd():字符串补全长度
+		// 如果字符串长度大于等于最大长度,则返回原字符串
+		// 如果原字符串+补全字符串长度大于最大长度，则截去超出长度的补全字符串
+		// 如果省略第二个元素，默认用空格补全
+		// console.log('xx'.padStart(4,'ab'))// abxx
+		// console.log('xx'.padEnd(4,'cd'))// cdxx
+		// console.log('xx'.padStart(4).length)
+		
+		// trim(),trimStart(),trimEnd():消除空格
+		// let s = '   abc   '
+		// console.log(s.trim().length)
+		// console.log(s.trimStart().length)
+		// console.log(s.trimEnd().length)
+		
+		// replace() ==>  replaceAll()相对于replace来说可以一次性替换所有匹配
+		var s = 'aabbcc'
+		console.log(s.replace('b','_'))
+		console.log(s.replaceAll('b','_'))
+	</script>
+</html>

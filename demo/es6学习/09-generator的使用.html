@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 1、普通函數
+  // function foo() {
+  //   console.log('foo被执行了')
+  // }
+  // foo()
+
+  // generator：生成器
+  // function* foo() {
+  //   // console.log(111)
+  //   yield 'Hello';
+  //   // console.log(222)
+  //   yield 'World';
+  //   // console.log(333)
+  //   yield 'YSY';
+  //   // console.log(444)
+  // }
+  // // iterator：迭代器
+  // const result = foo();
+
+  // // 3、使用迭代器
+  // const res1 = result.next();
+  // console.log(res1)
+  // const res2 = result.next();
+  // console.log(res2)
+  // const res3 = result.next();
+  // console.log(res3)
+  // const res4 = result.next();
+  // console.log(res4)
+
+  // 4、生成器中代码的执行顺序:每次调用一个next(),会消耗一次迭代器（interator）
+
+  // 5、定义一个生成器函数，依次生成1-10的数字
+  // function* foo() {
+  //   for(let i = 0; i < 10; i++) {
+  //     yield i;
+  //   }
+  // }
+  // const numIt = foo();
+  // console.log(numIt.next())
+  // console.log(numIt.next())
+
+  // 6、generator和promise一起使用
+  function* bar() {
+    console.log(1111)
+    const result = yield new Promise((resovle, reject) => {
+      setTimeout(() => {
+        resovle('Hello Generator');
+      },3000)
+    })
+    console.log(result);
+  }
+  const it = bar();
+  it.next().value.then(res => {
+    it.next(res)
+  })
+</script>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// function* fibs() {
+		// 	let a = 0;
+		// 	let b = 1;
+		// 	while(true) {
+		// 		yield a;
+		// 		[a, b] = [b, a + b];
+		// 	}
+		// }
+		// let [first, second, third, fourth, fifth, sixth] = fibs();
+		// console.log(sixth)
+		
+		// 解构赋值---默认值:设置新值以后则使用新值，否则使用默认值
+		// let [foo = true] = [false]
+		// console.log(foo)
+		// let [x, y = 'b'] = ['a','c']
+		// console.log(x,y)
+		// 当数组成员===undefined时，默认值才会生效
+		// let [x = 1] = [undefined]
+		// console.log(x) // 1
+		// let [x = 1] = [null]
+		// console.log(x) // null
+		
+		// 默认值是表达式时，它是惰性求值的
+		// x能取到值,所以函数不会执行，当x取不到值时，函数才会执行
+		// function f() {
+		// 	console.log('aaa')
+		// }
+		// let [x = f()] = [1]
+		// console.log(x)
+		
+		// 默认值可以引用解构赋值的其他变量，但该变量必须提前声明
+		// let [x = 1, y = x] = []
+		// console.log(x, y) // 1 1
+		// let [x, y = x] = []
+		// console.log(x, y) // undefined undefined
+		// let [x = y, y = 1] = []
+		// console.log(x, y)// 报错
+		
+		// 对象解构:变量值与属性值同名，才能取到对应的值
+		// let {foo, bar} = {foo:'zhangsan', bar:'lisi'}
+		// console.log(foo,bar)// zhangsan lisi
+		
+		// 如果解构失败，变量的值为undefined
+		// let {foo} = {bar: 'baz'}
+		// console.log(foo)
+		
+		// 当键名键值相同时，可以简写。当变量名和属性名不同时
+		// 解构赋值的内部机制，是先找到同名属性，然后再赋给对应的变量
+		// 下面代码中，foo是匹配的模式，baz是变量。真正被赋值的是baz而非foo
+		// let {foo: baz} = {foo: 'zhangsan', bar: 'lisi'}
+		// console.log(baz)// zhangsan
+		// console.log(foo)// foo is not defined
+		
+		// 嵌套赋值
+		// let obj = {};
+		// let arr = [];
+		// ({foo: obj.prop, bar: arr[0]} = {foo: 123, bar: true});
+		// console.log(obj)
+		// console.log(arr)
+		
+		// 对象解构的默认值,默认值生效的条件是对象的属性值严格等于undefined
+		// var {x = 3} = {}
+		// console.log(x)
+		// var {x, y = 5} = {x: 1}
+		// console.log(x, y)
+		// var { message: msg = '今天天气真好'} = {};
+		// console.log(msg)
+		
+		// 字符串的解构赋值:先将字符串转换成类似数组的对象
+		// const [a, b, c, d, e] = 'hello'
+		// console.log(a,b,c,d,e)
+		
+		// 数值和布尔值的解构
+		// let {toString: s} = 123;
+		// console.log(s === Number.prototype.toString)
+		
+		// 解构赋值的规则:只要等号右边的不是数组或者对象,则先将其转换成对象,
+		// 由于undefined和null无法转换为对象,因此不能对其进行解构赋值
+	</script>
+</html>

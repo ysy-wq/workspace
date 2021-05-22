@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// 1.属性的简洁表示法:简写的对象方法不能用作构造函数，会报错
+		// let user = {
+		// 	name: 'test'
+		// };
+		// let foo = {
+		// 	bar: 'baz'
+		// }
+		// console.log(user,foo)
+		// console.log({user,foo})
+		
+		// 2.属性名表达式:表达式放在中括号[]里
+		// let obj = {};
+		// obj.name = 'zhangsan';
+		// obj['age'] = 20
+		// obj['a' + 'bc'] = 'I Love Coding!'
+		// console.log(obj)
+		
+		// 如果属性名表达式是一个对象,会默认转换成字符串[Object, Object]
+		// const keyA = {a : 1}
+		// const keyB = {b : 2}
+		// const myObject = {
+		// 	[keyA]: 'valueA',
+		// 	[keyB]: 'valueB'
+		// }
+		// console.log(myObject)
+	</script>
+</html>

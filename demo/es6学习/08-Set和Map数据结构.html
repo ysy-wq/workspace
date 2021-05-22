@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// 1.set集:类似于数组,但是成员的值唯一,没有重复的值,
+		// Set本身是一个构造函数,用于生成Set数据结构
+		// const s = new Set();
+		// [2,3,5,4,5,2,2].forEach(x => s.add(x));
+		// s.forEach(i => console.log(i))
+		
+		// 2.set实例的方法：add(添加),delete(删除),has(判断),clear(清除所有成员)。
+		// set实例的遍历方法:keys(),values(),entries(),forEach()。
+		const s = new Set([2,3,5,4,5,2,2])
+		console.log(s.add(7))
+		console.log(s.delete(2))
+		console.log(s.has(2))
+		console.log(s.clear())
+	</script>
+</html>

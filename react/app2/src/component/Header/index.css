@@ -1,0 +1,52 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+  color: #333;
+}
+
+.header {
+  margin: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  height: 71px;
+}
+
+.header .headerImg{
+  width: 118px;
+  height: 71px;
+}
+
+.header .headerImg img{
+  height: 36px;
+  margin: 15px 0 0;
+}
+
+.header .headerType {
+  height: 71px;
+  display: flex;
+  list-style: none;
+}
+
+.header .headerType .headerTypeItem {
+  cursor: pointer;
+  margin: 27px 10px 0;
+  padding: 0 15px;
+}
+
+.header .headerType .headerTypeItem:hover {
+  color: greenyellow;
+  border-bottom: 1px solid greenyellow;
+}
+
+.header .headerType .choosedStyle {
+  color: greenyellow;
+}
+
+.header .headerBtn {
+  margin-top: 27px;
+}

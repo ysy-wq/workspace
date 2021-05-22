@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// 1.扩展运算符,相当于rest参数的逆运算.将一个数组转化为用逗号隔开的参数序列
+		// 代替函数的apply方法
+		// 展开运算符会将空位展开为undefined
+		// console.log(Math.max.apply(null,[23,41,8]))
+		// console.log(Math.max(...[23,41,8]))
+
+		// 2.如果将扩展运算符用于数组赋值,只能放在参数的最后一位,否则会报错
+		// const [...first,last] = [1,2,3,4,5]// 报错
+		// const [first,...last] = [1,2,3,4,5]
+		// console.log(first,last)// 1 [2,3,4,5]
+
+		// 3.将字符串转换为真正的数组
+		// console.log([...'hello'])
+
+		// 4.任何实现了遍历器Iterator接口的对象,都可以转换为真正的数组
+		// 例如通过querySelectorAll方法返回的是一个NodeList对象,不是真正的数组
+		// 可以通过扩展运算符转换为真正的对象
+
+		// 5.Array.from():用于将类似数组的对象和可遍历的对象转换为真正的数组
+
+		// 如果对象的索引值不是像数组下标一样的索引值，转换成数组后的数组值为undefined
+		// let arrayLike = {
+		// 	'0':'a',
+		// 	'1':'b',
+		// 	'2':'c',
+		// 	length:3
+		// }
+		// let arr = Array.from(arrayLike)
+		// console.log(arr)// ['a','b','c']
+
+		// 只要是部署了遍历器Iterator接口的数据结构,都可以通过Array.from转换成数组
+		// console.log(Array.from('hello'))
+		// let a = new Set(['a','b','c'])
+		// console.log(Array.from(a))
+
+		// 本质：扩展运算符调用的是Iterator接口，如果某个对象没有这个接口
+		// 则不能通过扩展运算符调用.而Array.from还可以将类似数组的对象转换成数组.
+		// 该对象需要有length属性
+
+		// Array.from还可以传递第二个参数，用于对每个元素进行处理
+		// let objLike = {
+		// 	'0':'1',
+		// 	'1':'2',
+		// 	'2':'3',
+		// 	length:3
+		// }
+		// const arr = Array.from(objLike,x => x * x >= 4 ? x : false);
+		// console.log(arr)
+
+		// 6.Array.of:用于将一组值转换成数组,
+		// console.log(Array.of(3,4,5,8))
+
+		// 7.indexOf和includes
+		// let arr = [1,4,3,3,2,2,3]
+		// let newArr = []
+		// arr.forEach( i => {
+		// 	if(newArr.includes(i) === false) {// 相对于indexOf语义更加明显
+		// 	// 并且可以判断NaN
+		// 		newArr.push(i)
+		// 	}
+		// })
+		// newArr.sort((a,b) => b - a)
+		// console.log(newArr)
+
+		// 8.flat():用于将数组扁平化:参数表示拉平的层数,如果参数为Infinity,
+		// 表示不管数组有几层,都转换成一维数组.如果有空位，flat方法会跳过空位
+	</script>
+</html>

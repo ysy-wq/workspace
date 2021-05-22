@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id='app'>
+    <a href="/home">首页</a>
+    <a href="/about">关于</a>
+    <div class="router-view"> </div>
+  </div>
+</body>
+<script>
+  const aEls = document.getElementsByTagName('a');
+  for(let el of aEls) {
+    el.addEventListener('click', e => {
+      e.preventDefault();
+      // console.log('a元素发生了点击')
+      const href = el.getAttribute('href')
+      history.pushState({}, '', href)
+      urlChange();
+    })
+  }
+
+  // 获取router-view的dom
+  const routerView = document.getElementsByClassName('router-view')[0];
+
+  // 执行返回操作时，回到urlChange
+  window.addEventListener('popstate',urlChange)
+
+  function urlChange() {
+    // console.log('urlchange', location.pathname)
+    switch(location.pathname) {
+      case '/home':
+        routerView.innerHTML = '首页';
+        break;
+      case '/about':
+        routerView.innerHTML = '关于';
+        break;
+      default:
+        routerView.innerHTML = '';
+    }
+  }
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // async function timeOut(flag) {
+  //   if(flag) {
+  //     return 'Hello World!'
+  //   } else {
+  //     throw '报错啦'
+  //   }
+  // }
+
+  // // async函数返回的是一个Promise对象，因此需要通过.then调用
+  // // timeOut().then(res => {
+  // //   console.log(res)
+  // // })
+
+  // console.log(timeOut(true))// Promise {<fulfilled>: "Hello World!"} 调用.resolve() 返回promise对象
+  // console.log(timeOut(false))// Promise {<rejected>: "报错啦"} 调用.reject() 返回promise对象
+  // timeOut(false).catch(err => {
+  //   console.log(err)
+  // })// 通过catch方法去捕获错误
+  // console.log('我在timeOut执行后面')
+
+
+  function doubleAfter2seconds(num) {
+    return new Promise((resovle, reject) => {
+      setTimeout(() => {
+        resovle(2 * num)
+      },2000)
+    })
+  }
+
+  async function testResult() {// 编写形似同步的代码来处理异步流程，提高代码的简洁性和可读性
+    let first = await doubleAfter2seconds(30);
+    console.log('first: ' + first)
+    let second = await doubleAfter2seconds(50);
+    console.log('second: ' + second)
+    let third = await doubleAfter2seconds(30);
+    console.log('third: ' + third)
+    console.log(first + second + third)
+  }
+  // 函数执行时，一遇到await就会返回。等到触发的异步操作完成，再接着执行函数题内后面的语句。
+  // 所有的代码同步进行，当上一个await执行完毕以后，才会调用下一个await。
+  testResult()
+</script>
+</html>

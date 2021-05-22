@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		// 1.给函数设置默认值
+		// function log(x,y = 3) {
+		// 	return x + y;
+		// }
+		// console.log(log(2))
+		
+		// 2.使用函数参数默认值时，不能有同名参数
+		// function log(x,x,y = 1){
+		// 	return x + x + y;
+		// }
+		// console.log(log(1,2,3))
+		
+		// 3.函数的length属性,等于它没有给默认值的参数的个数
+		// let sum = function(x, y = 2) {
+		// 	return x + y
+		// }
+		// console.log(sum.length)
+		
+		// 4.作用域
+		// 一旦设置了参数的默认值,函数进行初始化声明时,会形成单独作用域
+		// 初始化结束时,作用域消失,如果本身全局变量未定义,则指向全局变量
+		// 如果全局变量也未定义,会报错
+		
+		// 5.rest参数
+		// rest相对于arguement来说,他是一个真正的数组,可以直接进行数组操作
+		// arguement是一个类数组，想对他进行数组操作时需要先转换成真正的数组
+		// rest参数以后不能跟任何参数，即rest参数是最后一个参数，否则会报错
+		// 函数的length属性不包括rest参数
+		let sum = function(...values) {
+			let num = 0;
+			values.forEach( i => {num += i});
+			return num;
+		}
+		console.log(sum(2,3,4,5,6))
+	</script>
+</html>

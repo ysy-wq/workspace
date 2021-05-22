@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		const arr1 = [
+			{id:1, isShow: true, text: '1'},
+			{id:2, isShow: true, text: '2'},
+			{id:3, isShow: false, text: '3'},
+			{id:4, isShow: true, text: '4'},
+		];
+		const arr2 = [
+			{id:1, isShow: true, text: '1'},
+			{id:2, isShow: true, text: '2'},
+			{id:3, isShow: true, text: '3'},
+			{id:4, isShow: true, text: '4'},
+		];
+
+		const func = (arr) => arr.every(item => item.isShow === true)
+		console.log(func(arr1))
+		console.log(func(arr2))
+	</script>
+</html>
